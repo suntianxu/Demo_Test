@@ -1,0 +1,43 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "PyDemo.testcase.item",
+    "children" : [ {
+      "name" : "test_LoanAdd",
+      "children" : [ {
+        "name" : "TestItem",
+        "children" : [ {
+          "name" : "00:新增项目",
+          "uid" : "68cd833e00b0c73",
+          "parentUid" : "9a3779e6eceafbc21f25cdffb1ec556f",
+          "status" : "broken",
+          "time" : {
+            "start" : 1634550695077,
+            "stop" : 1634550695288,
+            "duration" : 211
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "01:新增项目1",
+          "uid" : "20940dd2cc4d0c28",
+          "parentUid" : "9a3779e6eceafbc21f25cdffb1ec556f",
+          "status" : "broken",
+          "time" : {
+            "start" : 1634550695453,
+            "stop" : 1634550695458,
+            "duration" : 5
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "9a3779e6eceafbc21f25cdffb1ec556f"
+      } ],
+      "uid" : "c3add19791fd969753387c54fe8712ae"
+    } ],
+    "uid" : "d3af3121c80da4e08ff66c07f5a7d943"
+  } ]
+}

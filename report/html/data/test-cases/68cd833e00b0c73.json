@@ -1,0 +1,104 @@
+{
+  "uid" : "68cd833e00b0c73",
+  "name" : "00:新增项目",
+  "fullName" : "PyDemo.testcase.item.test_LoanAdd.TestItem#test_LoanAdd",
+  "historyId" : "ed0edbd620a3e85709bc1b3c7746b4ee",
+  "time" : {
+    "start" : 1634550695077,
+    "stop" : 1634550695288,
+    "duration" : 211
+  },
+  "description" : "LoanAdd",
+  "descriptionHtml" : "<p>LoanAdd</p>\n",
+  "status" : "broken",
+  "statusMessage" : "KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'",
+  "statusTrace" : "param = 'func_calc_signvalue${parameter_pre}'\nrelevance = {'admin_pwd': 12345678, 'admin_user': 15800015001, 'company_auditStatus': 'func_XXXXXX_XXXX', 'cookies': None, ...}\n\n    def replace_relevance(param, relevance=None):\n    \t\"\"\"替换变量关联值\n    \t:param param: 参数对象\n    \t:param relevance: 关联对象\n    \t:return:\n    \t\"\"\"\n    \tglobal pattern\n    \tresult = re.findall(pattern_var, str(param))\n    \tif (not result) or (not relevance):\n    \t\tpass\n    \telse:\n    \t\tfor each in result:\n    \t\t\ttry:\n    \t\t\t\t# 关联参数多值替换\n    \t\t\t\trelevance_index = 0\n>   \t\t\t\tif isinstance(relevance[each], list):\nE       KeyError: 'parameter_pre'\n\ncomm\\unit\\replaceRelevance.py:56: KeyError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <test_LoanAdd.TestItem object at 0x000001FEE39B1310>\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\n\n    @allure.title(\"{case_data[title]}\")\n    @pytest.mark.parametrize(\"case_data\", case_dict[\"test_case\"])\n    @allure.story(\"LoanAdd\")\n    def test_LoanAdd(self, case_data):\n        allure.dynamic.description(case_data['describe'])\n        # 初始化请求：执行前置接口+替换关联变量\n>       test_info, case_data = init_premise(case_dict[\"test_info\"], case_data, case_path)\n\nPyDemo\\testcase\\item\\test_LoanAdd.py:27: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\ncomm\\unit\\initializePremise.py:99: in init_premise\n    pre_parameter = replaceRelevance.replace(pre_parameter, __relevance)\ncomm\\unit\\replaceRelevance.py:203: in replace\n    value = replace_relevance(value, relevance)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nparam = 'func_calc_signvalue${parameter_pre}'\nrelevance = {'admin_pwd': 12345678, 'admin_user': 15800015001, 'company_auditStatus': 'func_XXXXXX_XXXX', 'cookies': None, ...}\n\n    def replace_relevance(param, relevance=None):\n    \t\"\"\"替换变量关联值\n    \t:param param: 参数对象\n    \t:param relevance: 关联对象\n    \t:return:\n    \t\"\"\"\n    \tglobal pattern\n    \tresult = re.findall(pattern_var, str(param))\n    \tif (not result) or (not relevance):\n    \t\tpass\n    \telse:\n    \t\tfor each in result:\n    \t\t\ttry:\n    \t\t\t\t# 关联参数多值替换\n    \t\t\t\trelevance_index = 0\n    \t\t\t\tif isinstance(relevance[each], list):\n    \t\t\t\t\ttry:\n    \t\t\t\t\t\tparam = re.sub(pattern, relevance[each][relevance_index], param, count=1)\n    \t\t\t\t\t\trelevance_index += 1\n    \t\t\t\t\texcept IndexError:\n    \t\t\t\t\t\trelevance_index = 0\n    \t\t\t\t\t\tparam = re.sub(pattern, relevance[each][relevance_index], param, count=1)\n    \t\t\t\t\t\trelevance_index += 1\n    \t\t\t\tvalue = relevance[each]\n    \t\t\t\tpattern = re.compile(r'\\${' + each + '}')\n    \t\t\t\ttry:\n    \t\t\t\t\tparam = re.sub(pattern, str(value), param)\n    \t\t\t\t\tif not isinstance(value, str) and not isinstance(value, int):\n    \t\t\t\t\t\tif param.startswith(\"func\"):\n    \t\t\t\t\t\t\tparam = param\n    \t\t\t\t\t\telse:\n    \t\t\t\t\t\t\tparam = eval(param)\n    \t\t\t\texcept TypeError as e:\n    \t\t\t\t\tparam = param\n    \t\t\t\t\traise e\n    \t\t\texcept KeyError:\n>   \t\t\t\traise KeyError('替换变量{0}失败，未发现变量对应关联值！\\n关联列表：{1}'.format(param, relevance))\nE       KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'\n\ncomm\\unit\\replaceRelevance.py:77: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1634550694987,
+      "stop" : 1634550695076,
+      "duration" : 89
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "LoanAdd",
+    "status" : "broken",
+    "statusMessage" : "KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'",
+    "statusTrace" : "param = 'func_calc_signvalue${parameter_pre}'\nrelevance = {'admin_pwd': 12345678, 'admin_user': 15800015001, 'company_auditStatus': 'func_XXXXXX_XXXX', 'cookies': None, ...}\n\n    def replace_relevance(param, relevance=None):\n    \t\"\"\"替换变量关联值\n    \t:param param: 参数对象\n    \t:param relevance: 关联对象\n    \t:return:\n    \t\"\"\"\n    \tglobal pattern\n    \tresult = re.findall(pattern_var, str(param))\n    \tif (not result) or (not relevance):\n    \t\tpass\n    \telse:\n    \t\tfor each in result:\n    \t\t\ttry:\n    \t\t\t\t# 关联参数多值替换\n    \t\t\t\trelevance_index = 0\n>   \t\t\t\tif isinstance(relevance[each], list):\nE       KeyError: 'parameter_pre'\n\ncomm\\unit\\replaceRelevance.py:56: KeyError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <test_LoanAdd.TestItem object at 0x000001FEE39B1310>\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\n\n    @allure.title(\"{case_data[title]}\")\n    @pytest.mark.parametrize(\"case_data\", case_dict[\"test_case\"])\n    @allure.story(\"LoanAdd\")\n    def test_LoanAdd(self, case_data):\n        allure.dynamic.description(case_data['describe'])\n        # 初始化请求：执行前置接口+替换关联变量\n>       test_info, case_data = init_premise(case_dict[\"test_info\"], case_data, case_path)\n\nPyDemo\\testcase\\item\\test_LoanAdd.py:27: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\ncomm\\unit\\initializePremise.py:99: in init_premise\n    pre_parameter = replaceRelevance.replace(pre_parameter, __relevance)\ncomm\\unit\\replaceRelevance.py:203: in replace\n    value = replace_relevance(value, relevance)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nparam = 'func_calc_signvalue${parameter_pre}'\nrelevance = {'admin_pwd': 12345678, 'admin_user': 15800015001, 'company_auditStatus': 'func_XXXXXX_XXXX', 'cookies': None, ...}\n\n    def replace_relevance(param, relevance=None):\n    \t\"\"\"替换变量关联值\n    \t:param param: 参数对象\n    \t:param relevance: 关联对象\n    \t:return:\n    \t\"\"\"\n    \tglobal pattern\n    \tresult = re.findall(pattern_var, str(param))\n    \tif (not result) or (not relevance):\n    \t\tpass\n    \telse:\n    \t\tfor each in result:\n    \t\t\ttry:\n    \t\t\t\t# 关联参数多值替换\n    \t\t\t\trelevance_index = 0\n    \t\t\t\tif isinstance(relevance[each], list):\n    \t\t\t\t\ttry:\n    \t\t\t\t\t\tparam = re.sub(pattern, relevance[each][relevance_index], param, count=1)\n    \t\t\t\t\t\trelevance_index += 1\n    \t\t\t\t\texcept IndexError:\n    \t\t\t\t\t\trelevance_index = 0\n    \t\t\t\t\t\tparam = re.sub(pattern, relevance[each][relevance_index], param, count=1)\n    \t\t\t\t\t\trelevance_index += 1\n    \t\t\t\tvalue = relevance[each]\n    \t\t\t\tpattern = re.compile(r'\\${' + each + '}')\n    \t\t\t\ttry:\n    \t\t\t\t\tparam = re.sub(pattern, str(value), param)\n    \t\t\t\t\tif not isinstance(value, str) and not isinstance(value, int):\n    \t\t\t\t\t\tif param.startswith(\"func\"):\n    \t\t\t\t\t\t\tparam = param\n    \t\t\t\t\t\telse:\n    \t\t\t\t\t\t\tparam = eval(param)\n    \t\t\t\texcept TypeError as e:\n    \t\t\t\t\tparam = param\n    \t\t\t\t\traise e\n    \t\t\texcept KeyError:\n>   \t\t\t\traise KeyError('替换变量{0}失败，未发现变量对应关联值！\\n关联列表：{1}'.format(param, relevance))\nE       KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'\n\ncomm\\unit\\replaceRelevance.py:77: KeyError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d6d301d94879099",
+      "name" : "log",
+      "source" : "d6d301d94879099.txt",
+      "type" : "text/plain",
+      "size" : 5650
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "item"
+  }, {
+    "name" : "story",
+    "value" : "LoanAdd"
+  }, {
+    "name" : "parentSuite",
+    "value" : "PyDemo.testcase.item"
+  }, {
+    "name" : "suite",
+    "value" : "test_LoanAdd"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestItem"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-TBQLBF4"
+  }, {
+    "name" : "thread",
+    "value" : "30328-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "PyDemo.testcase.item.test_LoanAdd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "68cd833e00b0c73.json",
+  "parameterValues" : [ ]
+}

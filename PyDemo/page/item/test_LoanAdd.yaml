@@ -1,0 +1,53 @@
+test_info:
+  title: item
+  host: ${host}
+  scheme: https
+  method: POST
+  address: /loan/add
+  mime_type: application/json
+  headers: ${headers_admin}
+  timeout: 10
+  file: false
+  cookies: null
+  setup_hook: login_hook
+  premise: /user/test_MemberLogin.yaml _ 1
+test_case:
+  - summary: LoanAdd
+    describe: LoanAdd
+    title: 00:新增项目
+    premise: /user/test_MemberLogin.yaml _ 0
+    file: false
+    parameter: LoanAdd_request.json
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        - ["eq", "code", 0]
+        - ["eq", "msg", "OK"]
+        - ["eq", "$..amount", "${amount}"]
+    check_db:
+      - check_type: check_db
+        execute_sql: SELECT * FROM loan WHERE id ='${id}'
+        expected_result:
+          - amount: ${amount}
+        expected_num: 1
+  - summary: LoanAdd
+    describe: LoanAdd
+    title: 01:新增项目1
+    premise: false
+    file: false
+    parameter: LoanAdd_request.json
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        - ["eq", "code", 0]
+        - ["eq", "msg", "OK"]
+        - ["eq", "$..amount", "${amount}"]
+    check_db:
+      - check_type: check_db
+        execute_sql: SELECT * FROM loan WHERE id ='${id}'
+        expected_result:
+          - amount: ${amount}
+        expected_num: 1
+

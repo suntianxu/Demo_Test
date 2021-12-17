@@ -1,0 +1,2 @@
+# func_XXXXXX_XXXX为写的函数名称，函数下面写需要实现的内容 调用${company_auditStatus} 会替换
+company_auditStatus: func_XXXXXX_XXXX

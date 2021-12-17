@@ -1,0 +1,26 @@
+test_info:
+  title: user
+  host: ${host}
+  scheme: https
+  method: GET
+  address: /contract/download
+  mime_type: application/json
+  headers: ${headers}
+  timeout: 10
+  file: false
+  cookies: false
+  premise: false
+test_case:
+  - summary: ContractDownload
+    describe: test_ContractDownload
+    title: 00:通过bizId下载草稿合同
+    premise: /commonCase.yaml ContractCreateByCategory 0  # commonCase文件内容作为前置使用范例
+    file: false
+    download_name: 下载合同.zip    # 下载文件另存为
+    parameter:
+      bizId: ${bizId}
+    check_body:
+      check_type: check_code
+      expected_code: 200
+      expected_result:
+        - 200

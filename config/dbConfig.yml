@@ -1,0 +1,25 @@
+PyDemo:
+  # 数据库查询超时时长(不得小于1)
+  timeout: 3
+  # MySQL配置信息
+  mysql_info:
+    address: 8.129.91.152:3306
+    db: futureloan
+    user: future
+    auth: 123456
+  # sqlServer配置信息
+  sqlServer_info:
+    address: 190.8.20.3:3433
+    user: test
+    password: test
+    db: test
+  # 人大金仓数据库配置信息
+  kingbase_info:
+    address: 190.8.20.3:54321
+    user: test
+    password: test
+    db: test
+  # 可配置多个数据库
+
+PyDemo4.2.5:
+  # 复制上面格式

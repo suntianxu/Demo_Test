@@ -1,0 +1,7 @@
+func_get_template_from_db_Param:
+  SS: SELECT TOP 100 * FROM TEMPLATE_PARAM AS A INNER JOIN TEMPLATE AS B ON B.id = A.templateId INNER JOIN TEMPLATE_RANGE AS C ON B.id = C.templateId WHERE B.templateType = '${templateType}' AND B.status = ${status} and A.type = '${Ptype}'
+  MS: SELECT * FROM TEMPLATE_PARAM AS A INNER JOIN TEMPLATE AS B ON B.id = A.templateId INNER JOIN TEMPLATE_RANGE AS C ON B.id = C.templateId WHERE B.templateType = '${templateType}' AND B.status = ${status} and A.type = '${Ptype}' LIMIT 100
+func_get_template_from_db:
+  SS: SELECT TOP 100 A.* FROM TEMPLATE AS A INNER JOIN TEMPLATE_RANGE AS B ON A.id = B.templateId WHERE  A.templateType = '${templateType}' and A.status=${status}
+  MS: SELECT A.* FROM TEMPLATE AS A INNER JOIN TEMPLATE_RANGE AS B ON A.id = B.templateId WHERE  A.templateType = '${templateType}' and A.status=${status} LIMIT 100
+  KB: SELECT A.* FROM TEMPLATE AS A INNER JOIN TEMPLATE_RANGE AS B ON A.id = B.templateId WHERE  A.templateType = '${templateType}' and A.status=${status} LIMIT 100

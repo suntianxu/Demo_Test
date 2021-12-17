@@ -1,0 +1,39 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "item",
+    "children" : [ {
+      "name" : "LoanAdd",
+      "children" : [ {
+        "name" : "00:新增项目",
+        "uid" : "68cd833e00b0c73",
+        "parentUid" : "e27a805b345b76c0b9ab86f3fcd1ef93",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634550695077,
+          "stop" : 1634550695288,
+          "duration" : 211
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "01:新增项目1",
+        "uid" : "20940dd2cc4d0c28",
+        "parentUid" : "e27a805b345b76c0b9ab86f3fcd1ef93",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634550695453,
+          "stop" : 1634550695458,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e27a805b345b76c0b9ab86f3fcd1ef93"
+    } ],
+    "uid" : "c24e6a90c85feb6c2703700dc4a47c60"
+  } ]
+}

@@ -1,0 +1,104 @@
+{
+  "uid" : "20940dd2cc4d0c28",
+  "name" : "01:新增项目1",
+  "fullName" : "PyDemo.testcase.item.test_LoanAdd.TestItem#test_LoanAdd",
+  "historyId" : "5c441b1711da4662220018f36683ea2b",
+  "time" : {
+    "start" : 1634550695453,
+    "stop" : 1634550695458,
+    "duration" : 5
+  },
+  "description" : "LoanAdd",
+  "descriptionHtml" : "<p>LoanAdd</p>\n",
+  "status" : "broken",
+  "statusMessage" : "IndexError: list index out of range",
+  "statusTrace" : "self = <test_LoanAdd.TestItem object at 0x000001FEE39D4940>\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\n\n    @allure.title(\"{case_data[title]}\")\n    @pytest.mark.parametrize(\"case_data\", case_dict[\"test_case\"])\n    @allure.story(\"LoanAdd\")\n    def test_LoanAdd(self, case_data):\n        allure.dynamic.description(case_data['describe'])\n        # 初始化请求：执行前置接口+替换关联变量\n>       test_info, case_data = init_premise(case_dict[\"test_info\"], case_data, case_path)\n\nPyDemo\\testcase\\item\\test_LoanAdd.py:27: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ntest_info = {'address': '/loan/add', 'cookies': None, 'file': False, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJ...-0Cn1K-dyR3cEXGr06SEWxgzdQQqkRX4Cqc9lszm0mA_rUudo7RH1_yuFHX-xraQ5OXLTBw', 'X-Lemonban-Media-Type': 'lemonban.v2'}, ...}\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\ncase_path = 'D:\\\\pythonProject\\\\ApiTest_Demo\\\\PyDemo\\\\page\\\\item'\n\n    def init_premise(test_info, case_data, case_path):\n        \"\"\"用例前提条件执行，提取关键值\n        :param test_info: 测试信息\n        :param case_data: 用例数据\n        :param case_path: 用例路径\n        :return:\n        \"\"\"\n        # 获取项目公共关联值\n        aconfig = readYaml.read_yaml_data(API_CONFIG)   # 项目基础信息\n        pconfig = readYaml.read_yaml_data(PARAM_CONFIG)   # 调用函数的参数信息\n        __relevance = {**aconfig[PROJECT_NAME], **pconfig}   # 将两个参数池合并\n        # 处理测试信息\n        test_info = replaceRelevance.replace(test_info, __relevance)\n        test_info = find_func(test_info)\n        logging.debug(\"测试信息处理结果：{}\".format(test_info))\n        # 判断是否存在前置接口\n        conf_path = False\n        if test_info[\"premise\"] and not case_data[\"premise\"]:\n            conf_path = test_info[\"premise\"]\n        elif test_info[\"premise\"] and case_data[\"premise\"]:\n            conf_path = case_data[\"premise\"]\n        elif not test_info[\"premise\"] and case_data[\"premise\"]:\n            conf_path = case_data[\"premise\"]\n        if conf_path:\n            conf_list = conf_path.split(\" \")\n            pre_case_path = conf_list[0]\n            if pre_case_path:\n                # 获取前置接口用例\n                logging.info(\"获取前置接口测试用例：{}\".format(pre_case_path))\n                pre_case_path = PAGE_DIR + pre_case_path\n                pre_case_row = int(conf_list[2])\n                pre_case_dict = readYaml.read_yaml_data(pre_case_path)\n                if conf_list[1] == \"_\":\n                    pre_test_info = pre_case_dict['test_info']\n>                   pre_case_data = pre_case_dict['test_case'][pre_case_row]\nE                   IndexError: list index out of range\n\ncomm\\unit\\initializePremise.py:78: IndexError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1634550694987,
+      "stop" : 1634550695076,
+      "duration" : 89
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "LoanAdd",
+    "status" : "broken",
+    "statusMessage" : "IndexError: list index out of range",
+    "statusTrace" : "self = <test_LoanAdd.TestItem object at 0x000001FEE39D4940>\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\n\n    @allure.title(\"{case_data[title]}\")\n    @pytest.mark.parametrize(\"case_data\", case_dict[\"test_case\"])\n    @allure.story(\"LoanAdd\")\n    def test_LoanAdd(self, case_data):\n        allure.dynamic.description(case_data['describe'])\n        # 初始化请求：执行前置接口+替换关联变量\n>       test_info, case_data = init_premise(case_dict[\"test_info\"], case_data, case_path)\n\nPyDemo\\testcase\\item\\test_LoanAdd.py:27: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ntest_info = {'address': '/loan/add', 'cookies': None, 'file': False, 'headers': {'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJ...-0Cn1K-dyR3cEXGr06SEWxgzdQQqkRX4Cqc9lszm0mA_rUudo7RH1_yuFHX-xraQ5OXLTBw', 'X-Lemonban-Media-Type': 'lemonban.v2'}, ...}\ncase_data = {'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', 'msg',...'${id}'\", 'expected_num': 1, 'expected_result': [{'amount': '${amount}'}]}], 'describe': 'LoanAdd', 'file': False, ...}\ncase_path = 'D:\\\\pythonProject\\\\ApiTest_Demo\\\\PyDemo\\\\page\\\\item'\n\n    def init_premise(test_info, case_data, case_path):\n        \"\"\"用例前提条件执行，提取关键值\n        :param test_info: 测试信息\n        :param case_data: 用例数据\n        :param case_path: 用例路径\n        :return:\n        \"\"\"\n        # 获取项目公共关联值\n        aconfig = readYaml.read_yaml_data(API_CONFIG)   # 项目基础信息\n        pconfig = readYaml.read_yaml_data(PARAM_CONFIG)   # 调用函数的参数信息\n        __relevance = {**aconfig[PROJECT_NAME], **pconfig}   # 将两个参数池合并\n        # 处理测试信息\n        test_info = replaceRelevance.replace(test_info, __relevance)\n        test_info = find_func(test_info)\n        logging.debug(\"测试信息处理结果：{}\".format(test_info))\n        # 判断是否存在前置接口\n        conf_path = False\n        if test_info[\"premise\"] and not case_data[\"premise\"]:\n            conf_path = test_info[\"premise\"]\n        elif test_info[\"premise\"] and case_data[\"premise\"]:\n            conf_path = case_data[\"premise\"]\n        elif not test_info[\"premise\"] and case_data[\"premise\"]:\n            conf_path = case_data[\"premise\"]\n        if conf_path:\n            conf_list = conf_path.split(\" \")\n            pre_case_path = conf_list[0]\n            if pre_case_path:\n                # 获取前置接口用例\n                logging.info(\"获取前置接口测试用例：{}\".format(pre_case_path))\n                pre_case_path = PAGE_DIR + pre_case_path\n                pre_case_row = int(conf_list[2])\n                pre_case_dict = readYaml.read_yaml_data(pre_case_path)\n                if conf_list[1] == \"_\":\n                    pre_test_info = pre_case_dict['test_info']\n>                   pre_case_data = pre_case_dict['test_case'][pre_case_row]\nE                   IndexError: list index out of range\n\ncomm\\unit\\initializePremise.py:78: IndexError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "b4461046f386513",
+      "name" : "log",
+      "source" : "b4461046f386513.txt",
+      "type" : "text/plain",
+      "size" : 686
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "item"
+  }, {
+    "name" : "story",
+    "value" : "LoanAdd"
+  }, {
+    "name" : "parentSuite",
+    "value" : "PyDemo.testcase.item"
+  }, {
+    "name" : "suite",
+    "value" : "test_LoanAdd"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestItem"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-TBQLBF4"
+  }, {
+    "name" : "thread",
+    "value" : "30328-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "PyDemo.testcase.item.test_LoanAdd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "20940dd2cc4d0c28.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,47 @@
+test_info:
+  title: user
+  host: ${host}
+  scheme: https
+  method: POST
+  address: /v2/document/addbyfile
+  mime_type: multipart/form-data
+  headers: ${headers}
+  timeout: 10
+  file: true   # 文件上传开关
+  cookies: false
+  premise: false
+test_case:
+  - summary: v2DocumentAddByFile
+    describe: test_v2DocumentAddByFile
+    title: 00:给草稿合同添加文件
+    premise: false
+    file: file 参数合同回归测试（双方）.pdf   # 文件
+    parameter:
+      contractId: ${result_id}
+      bizId: ${result_bizId}
+      title: pdf合同文件添加
+      fileSuffix: pdf
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        code: 0
+        message: SUCCESS
+  - summary: v2DocumentAddByFile
+    describe: test_v2DocumentAddByFile
+    title: 01:上传多分文件
+    premise: false
+    file:
+      - file 参数合同回归测试（双方）.pdf
+      - file 参数合同回归测试（双方）.pdf
+    parameter:
+      contractId: ${result_id}
+      bizId: ${result_bizId}
+      title: pdf合同文件添加
+      fileSuffix: pdf
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        code: 0
+        message: SUCCESS

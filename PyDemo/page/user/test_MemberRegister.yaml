@@ -1,0 +1,45 @@
+test_info:
+  title: user
+  host: ${host}
+  scheme: https
+  method: POST
+  address: /member/register
+  mime_type: application/json
+  headers: ${header_befor}
+  timeout: 10
+  file: false
+  cookies: false
+  premise: false
+test_case:
+  - summary: MemberRegister
+    describe: test_MemberRegister
+    title: 00:创建一个普通会员
+    premise: false
+    file: false
+    parameter:
+      mobile_phone: ${user_}
+      pwd: ${user_pwd}
+      type: 1
+      reg_name: tester168
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        code: 0
+        msg: OK
+  - summary: MemberRegister
+    describe: test_MemberRegister
+    title: 02:创建一个管理员
+    premise: false
+    file: false
+    parameter:
+      mobile_phone: ${admin_user}
+      pwd: ${admin_pwd}
+      type: 0
+      reg_name: admin168
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        code: 0
+        msg: OK

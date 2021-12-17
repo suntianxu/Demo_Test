@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Mon Oct 18 17:51:35 CST 2021","Mon Oct 18 17:51:35 CST 2021","5","PyDemo.testcase.item","test_LoanAdd","TestItem","","","01:新增项目1","LoanAdd"
+"broken","Mon Oct 18 17:51:35 CST 2021","Mon Oct 18 17:51:35 CST 2021","211","PyDemo.testcase.item","test_LoanAdd","TestItem","","","00:新增项目","LoanAdd"

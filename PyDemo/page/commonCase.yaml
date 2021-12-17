@@ -1,0 +1,29 @@
+templateList: # 大类
+  test_info:
+    title: template
+    host: ${host}
+    scheme: https
+    method: GET
+    address: /template/list
+    mime_type: multipart/form-data
+    headers: ${headers}
+    timeout: 10
+    file: false
+    cookies: false
+    premise: false
+  test_case:
+    - summary: 0：获取html参数模板id和参数
+      premise: false
+      file: false
+      parameter:
+        type: HTML
+        tenantId: ${tenantId_corporate}
+        property: FORM
+      check_body:
+        check_type: check_json
+        expected_code: 200
+        expected_result:
+          - ["gt", "code", -1]
+          - ["not_none", "message", "SUCCESS"]
+          - ["!=", "$..signatories", 2]
+

@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-TBQLBF4",
+    "children" : [ {
+      "name" : "30328-MainThread",
+      "children" : [ {
+        "name" : "01:新增项目1",
+        "uid" : "20940dd2cc4d0c28",
+        "parentUid" : "6fb1c99b28362fa2f56c92398d9a0817",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634550695453,
+          "stop" : 1634550695458,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "00:新增项目",
+        "uid" : "68cd833e00b0c73",
+        "parentUid" : "6fb1c99b28362fa2f56c92398d9a0817",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634550695077,
+          "stop" : 1634550695288,
+          "duration" : 211
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6fb1c99b28362fa2f56c92398d9a0817"
+    } ],
+    "uid" : "cf383455a54fa968a81618dea12b0f04"
+  } ]
+}

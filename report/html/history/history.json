@@ -1,0 +1,42 @@
+{
+  "5c441b1711da4662220018f36683ea2b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "20940dd2cc4d0c28",
+      "status" : "broken",
+      "statusDetails" : "IndexError: list index out of range",
+      "time" : {
+        "start" : 1634550695453,
+        "stop" : 1634550695458,
+        "duration" : 5
+      }
+    } ]
+  },
+  "ed0edbd620a3e85709bc1b3c7746b4ee" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "68cd833e00b0c73",
+      "status" : "broken",
+      "statusDetails" : "KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'",
+      "time" : {
+        "start" : 1634550695077,
+        "stop" : 1634550695288,
+        "duration" : 211
+      }
+    } ]
+  }
+}

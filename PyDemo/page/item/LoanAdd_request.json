@@ -1,0 +1,13 @@
+[
+    {
+        "summary": "LoanAdd",
+        "body": {
+                "member_id":"${data_id}",
+                "title":"新增一个项目",
+                "amount":6300.00,
+                "loan_rate":12.0,
+                "loan_term":12,
+                "loan_date_type":1,
+                "bidding_days":5
+}}
+]
