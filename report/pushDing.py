@@ -18,11 +18,11 @@ REPORT_DIR = ROOT_DIR + 'report'
 
 
 # jenkins连接信息
-jenkins_conf = RC["jenkins_conf"]
+jenkins_conf = RC["Jenkins_conf"]
 # 获取jenkins对象
 server = jenkins.Jenkins(**jenkins_conf)  # Jenkins登录名 ，密码
 # job名称
-job_name = jenkins_conf["job_name"]  # Jenkins运行任务名称
+job_name = RC["job_name"]  # Jenkins运行任务名称
 # job的url地址
 job_url = jenkins_conf["url"] + job_name
 # 获取最后一次构建

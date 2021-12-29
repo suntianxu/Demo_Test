@@ -29,7 +29,7 @@ def read_json(summary, json_obj, case_path):
     else:
         try:
             # 读取json文件指定用例数据
-            with open(case_path+'\\'+json_obj, "r", encoding="utf-8") as js:
+            with open(case_path+'/'+json_obj, "r", encoding="utf-8") as js:
                 data_list = json.load(js)
                 for data in data_list:
                     if data['summary'] == summary:

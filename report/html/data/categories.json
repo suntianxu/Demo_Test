@@ -1,43 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "KeyError: '替换变量func_calc_signvalue${parameter_pre}失败，未发现变量对应关联值！\\n关联列表：{\\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15800015000, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://api.lemonban.com/futureloan\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'",
-      "children" : [ {
-        "name" : "00:新增项目",
-        "uid" : "68cd833e00b0c73",
-        "parentUid" : "9922133e7fea2affe8fa5f4d6b78d83a",
-        "status" : "broken",
-        "time" : {
-          "start" : 1634550695077,
-          "stop" : 1634550695288,
-          "duration" : 211
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "9922133e7fea2affe8fa5f4d6b78d83a"
-    }, {
-      "name" : "IndexError: list index out of range",
-      "children" : [ {
-        "name" : "01:新增项目1",
-        "uid" : "20940dd2cc4d0c28",
-        "parentUid" : "cbf21ee610ffd376e0ce643a364ade80",
-        "status" : "broken",
-        "time" : {
-          "start" : 1634550695453,
-          "stop" : 1634550695458,
-          "duration" : 5
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "cbf21ee610ffd376e0ce643a364ade80"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ]
+  "children" : [ ]
 }

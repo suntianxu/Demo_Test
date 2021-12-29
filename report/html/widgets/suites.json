@@ -1,15 +1,4 @@
 {
-  "total" : 1,
-  "items" : [ {
-    "uid" : "d3af3121c80da4e08ff66c07f5a7d943",
-    "name" : "PyDemo.testcase.item",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 2,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 2
-    }
-  } ]
+  "total" : 0,
+  "items" : [ ]
 }

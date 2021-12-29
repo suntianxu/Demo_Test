@@ -114,7 +114,8 @@ def get(headers, address, data, downloadName=None, timeout=8, cookies=None):
                             params=data,
                             headers=headers,
                             timeout=timeout,
-                            cookies=cookies)
+                            cookies=cookies,
+                            verify=False)
     if response.status_code == 301:
         response = requests.get(url=response.headers["location"])
     try:
@@ -159,7 +160,8 @@ def put(headers, address, mime_type, timeout=8, data=None, files=None, cookies=N
                             headers=headers,
                             timeout=timeout,
                             files=files,
-                            cookies=cookies).encoding
+                            cookies=cookies,
+                            verify=False)
     try:
         return response.status_code, response.json()
     except json.decoder.JSONDecodeError:
@@ -186,7 +188,8 @@ def delete(headers, address, data, timeout=8, cookies=None):
                                params=data,
                                headers=headers,
                                timeout=timeout,
-                               cookies=cookies)
+                               cookies=cookies,
+                               verify=False)
     try:
         return response.status_code, response.json()
     except json.decoder.JSONDecodeError:
@@ -217,14 +220,16 @@ def save_cookie(headers, address, mime_type, timeout=8, data=None, files=None, c
                                  headers=headers,
                                  timeout=timeout,
                                  files=files,
-                                 cookies=cookies)
+                                 cookies=cookies,
+                                 verify=False)
     else:
         response = requests.post(url=address,
                                  json=data,
                                  headers=headers,
                                  timeout=timeout,
                                  files=files,
-                                 cookies=cookies)
+                                 cookies=cookies,
+                                 verify=False)
     try:
         cookies = response.cookies.get_dict()
         # 读取api配置并写入最新的cookie结果

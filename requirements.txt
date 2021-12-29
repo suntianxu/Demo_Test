@@ -13,8 +13,6 @@ greenlet==1.1.1
 gssapi==1.7.0
 idna==3.2
 iniconfig==1.1.1
-JayDeBeApi==1.2.3
-JPype1==1.3.0
 jsonpath==0.82
 more-itertools==8.10.0
 multi-key-dict==2.0.3
@@ -25,10 +23,8 @@ pluggy==1.0.0
 protobuf==3.18.0
 py==1.10.0
 PyHamcrest==2.0.2
-pymssql==2.2.2
 PyMySQL==1.0.2
 pyparsing==2.4.7
-pysolr==3.9.0
 pytest==6.2.5
 pytest-forked==1.3.0
 pytest-metadata==1.11.0

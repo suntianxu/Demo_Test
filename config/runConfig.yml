@@ -13,7 +13,7 @@ auto_switch: 1
 scan_dir: ""
 
 # 使用模糊匹配测试用例（空则匹配所有）
-pattern: "loan"
+pattern: "register"
 
 # 执行并发线程数（0表示不开启）
 process: 0
@@ -31,8 +31,8 @@ interval: 1
 Jenkins_conf:
   url: http://127.0.0.1:8080
   username: admin
-  password: 123456
-  job_name: job/private_apiTesting/
+#  password: !!str 123456
+#job_name: job/private_apiTesting/
 
 # 钉钉配置
 dd_url: fsdfsfsdfdds    #webhook
