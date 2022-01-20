@@ -1,1 +1,21 @@
-[ ]
+[ {
+  "uid" : "5669cafd0b9b1f25",
+  "name" : "01:流程用例：签署方为发起主体，指定company签字",
+  "time" : {
+    "start" : 1642674983375,
+    "stop" : 1642674985405,
+    "duration" : 2030
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9933b581e056431d",
+  "name" : "00:流程用例：签署方为发起主体，指定个人签字",
+  "time" : {
+    "start" : 1642674983062,
+    "stop" : 1642674983068,
+    "duration" : 6
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]

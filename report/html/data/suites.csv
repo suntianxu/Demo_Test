@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Thu Jan 20 18:36:23 CST 2022","Thu Jan 20 18:36:25 CST 2022","2030","PyDemo.testcase.contract","test_ContractCreateByCategory","TestContract_Create","","","01:流程用例：签署方为发起主体，指定company签字","test_ContractCreateByCategory"
+"broken","Thu Jan 20 18:36:23 CST 2022","Thu Jan 20 18:36:23 CST 2022","6","PyDemo.testcase.contract","test_ContractCreateByCategory","TestContract_Create","","","00:流程用例：签署方为发起主体，指定个人签字","test_ContractCreateByCategory"

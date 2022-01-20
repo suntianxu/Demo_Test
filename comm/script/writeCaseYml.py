@@ -3,6 +3,7 @@
 # @Author  : Xuanyu Liu
 # @File    : writeCaseYaml.py
 # ****************************
+import urllib.parse
 import os
 import json
 import logging
@@ -92,6 +93,8 @@ def init_test_case(har_ct, module_path, parameter, file_name):
     test_case = dict()
     test_case["summary"] = title
     test_case["describe"] = 'test_' + title
+    test_case["premise"] = False
+    test_case["title"] = 'test_' + title
 
     # 定义请求入参信息，且当参数字符总长度大于200时单独写入json文件
     if len(str(parameter)) > 200:
@@ -158,9 +161,11 @@ def write_case_yaml(har_path):
                 path = har_ct["path"]
                 title = file_name
                 # title = path.split("/")[-1].replace('-', '')
-                module = path.split("/")[-2].replace('-', '')
+                if path.split("/")[-2].replace('-', ''):
+                    module = path.split("/")[-2].replace('-', '')
+                else:
+                    module = title
                 module_path = har_path.split('data')[0] + '/page/' + module
-
                 # 创建模块目录
                 try:
                     os.makedirs(module_path)
@@ -180,7 +185,6 @@ def write_case_yaml(har_path):
                 test_info = dict()
                 test_info["title"] = module
                 test_info["host"] = '${host}'
-                test_info["scheme"] = '${scheme}'
                 test_info["method"] = method
                 test_info["address"] = path
                 test_info["mime_type"] = har_ct["request"]["mimeType"]
@@ -208,4 +212,4 @@ def write_case_yaml(har_path):
 
 if __name__ == '__main__':
     real_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/')
-    print('测试用例列表: ', write_case_yaml(real_path+'/data'))
+    print('测试用例列表: ', write_case_yaml("D:\pythonProject\Demo_Test\PyDemo\data"))

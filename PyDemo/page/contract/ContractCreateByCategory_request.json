@@ -1,0 +1,64 @@
+[
+    {
+        "summary": "ContractCreateByCategory",
+        "body": {
+    "subject": "分类创建合同-1 $GenDatetime()",
+    "categoryId": "20212524551154545",
+    "send": "true",
+    "documents": ["${result_documentId}"],
+    "creatorName": "admin",
+    "creatorContact": "10000000000",
+    "tenantName": "testApi",
+    "extraSign": false,
+    "mustSign": true,
+    "autoCreateCounterSign" : true,
+    "bizId": "QYS-OPEN$RandStr(10)",
+    "signatories": [
+        {
+            "tenantType": "PERSONAL",
+            "tenantName": "tester",
+            "contact":"10200000000",
+            "actions": [
+                {
+                    "type": "PERSONAL",
+                    "name": "个人签字",
+                    "serialNo": "1",
+                    "actionOperators": [{"operatorContact": "10200000000"}]
+                }
+               ]
+                }
+            ]
+        }
+    },
+    {
+        "summary": "ContractCreateByCategory1",
+        "body": {
+    "subject": "分类创建合同-1 $GenDatetime()",
+    "categoryId": "20212524551154545",
+    "send": "true",
+    "documents": ["${result_documentId}"],
+    "creatorName": "admin",
+    "creatorContact": "10000000000",
+    "tenantName": "testApi",
+    "extraSign": false,
+    "mustSign": true,
+    "autoCreateCounterSign" : true,
+    "bizId": "QYS-OPEN$RandStr(10)",
+    "signatories": [
+        {
+            "tenantType": "PERSONAL",
+            "tenantName": "tester",
+            "contact":"10200000000",
+            "actions": [
+                {
+                    "type": "PERSONAL",
+                    "name": "个人签字",
+                    "serialNo": "1",
+                    "actionOperators": [{"operatorContact": "10200000000"}]
+                }
+               ]
+                }
+            ]
+        }
+    }
+]

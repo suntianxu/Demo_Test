@@ -1,5 +1,39 @@
 {
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "DESKTOP-TBQLBF4",
+    "children" : [ {
+      "name" : "208180-MainThread",
+      "children" : [ {
+        "name" : "00:流程用例：签署方为发起主体，指定个人签字",
+        "uid" : "9933b581e056431d",
+        "parentUid" : "0b5d08cc5e0d66f15c5faab64e358cbc",
+        "status" : "broken",
+        "time" : {
+          "start" : 1642674983062,
+          "stop" : 1642674983068,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'ContractCreateByCategory', 'describe': 'test_ContractCreateByCategory', 'title': '00:流程用例：签署方为发起主体，指定个人签字', 'premise': '/commonCase.yaml v2DocumentCreateByFile 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+      }, {
+        "name" : "01:流程用例：签署方为发起主体，指定company签字",
+        "uid" : "5669cafd0b9b1f25",
+        "parentUid" : "0b5d08cc5e0d66f15c5faab64e358cbc",
+        "status" : "broken",
+        "time" : {
+          "start" : 1642674983375,
+          "stop" : 1642674985405,
+          "duration" : 2030
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'ContractCreateByCategory1', 'describe': 'test_ContractCreateByCategory', 'title': '01:流程用例：签署方为发起主体，指定company签字', 'premise': '/document/test_v2DocumentCreateByFile.yaml _ 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+      } ],
+      "uid" : "0b5d08cc5e0d66f15c5faab64e358cbc"
+    } ],
+    "uid" : "cf383455a54fa968a81618dea12b0f04"
+  } ]
 }

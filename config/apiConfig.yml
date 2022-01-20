@@ -1,6 +1,9 @@
 PyDemo:
+  timeout: 120
   cookies: null
   headers: func_header
+  app_secret: safdsgsgw
+  app_token: 12342543jlkfjsdkjt345j3jl234
   headers_admin: func_header{'user':'15800015001','pwd':'12345678'}
   header_befor: {'X-Lemonban-Media-Type': 'lemonban.v2'}
   admin_user: 15800015001
@@ -9,5 +12,5 @@ PyDemo:
   user_pwd: 12345678
   dbType: mysql
   # 环境和应用信息
-  host: http://api.lemonban.com/futureloan
+  host: http://127.0.0.1:5000
   # 可以自定义多个

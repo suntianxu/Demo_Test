@@ -1,5 +1,43 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "KeyError: 'v2DocumentCreateByFile'",
+      "children" : [ {
+        "name" : "00:流程用例：签署方为发起主体，指定个人签字",
+        "uid" : "9933b581e056431d",
+        "parentUid" : "bc5297f0f9c83fea7bb52851f3cb649c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1642674983062,
+          "stop" : 1642674983068,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'ContractCreateByCategory', 'describe': 'test_ContractCreateByCategory', 'title': '00:流程用例：签署方为发起主体，指定个人签字', 'premise': '/commonCase.yaml v2DocumentCreateByFile 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+      } ],
+      "uid" : "bc5297f0f9c83fea7bb52851f3cb649c"
+    }, {
+      "name" : "Exception: 关键字校验失败！ jsonPath匹配code 的结果值 1000000 ! = 0",
+      "children" : [ {
+        "name" : "01:流程用例：签署方为发起主体，指定company签字",
+        "uid" : "5669cafd0b9b1f25",
+        "parentUid" : "cd7d1cb708f003f249c05887ff82f3e4",
+        "status" : "broken",
+        "time" : {
+          "start" : 1642674983375,
+          "stop" : 1642674985405,
+          "duration" : 2030
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'ContractCreateByCategory1', 'describe': 'test_ContractCreateByCategory', 'title': '01:流程用例：签署方为发起主体，指定company签字', 'premise': '/document/test_v2DocumentCreateByFile.yaml _ 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+      } ],
+      "uid" : "cd7d1cb708f003f249c05887ff82f3e4"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

@@ -1,0 +1,37 @@
+test_info:
+  title: contract_create
+  host: ${host}
+  scheme: https
+  method: POST
+  address: /contract/createbycategory
+  mime_type: application/json
+  headers: ${headers}
+  timeout: 10
+  file: false
+  cookies: false
+  premise: false
+test_case:
+  - summary: ContractCreateByCategory
+    describe: test_ContractCreateByCategory
+    title: 00:流程用例：签署方为发起主体，指定个人签字
+    premise: /commonCase.yaml v2DocumentCreateByFile 0   # commonCase.yaml
+    file: false
+    parameter: ContractCreateByCategory_request.json
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        - ["eq", "code", 0]
+        - ["eq", "$..message", "SUCCESS"]
+  - summary: ContractCreateByCategory1
+    describe: test_ContractCreateByCategory
+    title: 01:流程用例：签署方为发起主体，指定company签字
+    premise: /document/test_v2DocumentCreateByFile.yaml _ 0   # document
+    file: false
+    parameter: ContractCreateByCategory_request.json
+    check_body:
+      check_type: check_json
+      expected_code: 200
+      expected_result:
+        - ["eq", "code", 0]
+        - ["eq", "$..message", "SUCCESS"]

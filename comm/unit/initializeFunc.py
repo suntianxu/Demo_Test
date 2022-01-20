@@ -4,23 +4,27 @@
 # @file： initializeFunc.py
 # datetime： 2021/7/19 9:57 
 # ide： PyCharm
+import hashlib
+
 from comm.unit.apiMethod import *
 from comm.unit.queryDatabase import QueryDB
 
 from config import PROJECT_NAME, AC
 
 
-def func_header(user=AC[PROJECT_NAME]['user_'], pwd=AC[PROJECT_NAME]['user_pwd']):
+def func_header():
     """
-    更新header
+    更新open接口header
     """
-    login_res = post(headers={'X-Lemonban-Media-Type': 'lemonban.v2'}, address=AC[PROJECT_NAME]['host']+'/member/login',
-                     mime_type='application/json', data={'mobile_phone': user,
-                                                         'pwd': pwd})[1]
-    token = login_res['data']['token_info']['token']
+    SECRET = AC[PROJECT_NAME]['app_secret']
+    TOKEN = AC[PROJECT_NAME]['app_token']
+    timestamp = str(round(time.time() * 1000))
+    signature = TOKEN.strip() + SECRET.strip() + timestamp.strip()
+    md5 = hashlib.md5(signature.encode(encoding='utf-8')).hexdigest()
     header = {
-        'X-Lemonban-Media-Type': 'lemonban.v2',
-        'Authorization': f'Bearer {token}'
+        'x-qys-accesstoken': TOKEN,
+        'x-qys-timestamp': timestamp,
+        'x-qys-signature': md5
     }
     return header
 

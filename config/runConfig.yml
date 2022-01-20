@@ -13,7 +13,7 @@ auto_switch: 1
 scan_dir: ""
 
 # 使用模糊匹配测试用例（空则匹配所有）
-pattern: "register"
+pattern: "ContractCreateByCategory"
 
 # 执行并发线程数（0表示不开启）
 process: 0
