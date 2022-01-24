@@ -7,36 +7,66 @@
       "name" : "KeyError: 'v2DocumentCreateByFile'",
       "children" : [ {
         "name" : "00:流程用例：签署方为发起主体，指定个人签字",
-        "uid" : "9933b581e056431d",
+        "uid" : "8aa44e4bbe160ed7",
         "parentUid" : "bc5297f0f9c83fea7bb52851f3cb649c",
         "status" : "broken",
         "time" : {
-          "start" : 1642674983062,
-          "stop" : 1642674983068,
+          "start" : 1643015521099,
+          "stop" : 1643015521105,
           "duration" : 6
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'summary': 'ContractCreateByCategory', 'describe': 'test_ContractCreateByCategory', 'title': '00:流程用例：签署方为发起主体，指定个人签字', 'premise': '/commonCase.yaml v2DocumentCreateByFile 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+      }, {
+        "name" : "00:通过bizId下载草稿合同",
+        "uid" : "60827b773ca405e8",
+        "parentUid" : "bc5297f0f9c83fea7bb52851f3cb649c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1643015523465,
+          "stop" : 1643015523475,
+          "duration" : 10
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'ContractDownload', 'describe': 'test_ContractDownload', 'title': '00:通过bizId下载草稿合同', 'premise': '/contract/test_ContractCreateByCategory.yaml _ 0', 'file': False, 'download_name': '下载合同.zip', 'parameter': {'bizId': '${bizId}'}, 'check_body': {'check_type': 'check_code', 'expected_code': 200, 'expected_result': [200]}}" ]
       } ],
       "uid" : "bc5297f0f9c83fea7bb52851f3cb649c"
     }, {
       "name" : "Exception: 关键字校验失败！ jsonPath匹配code 的结果值 1000000 ! = 0",
       "children" : [ {
         "name" : "01:流程用例：签署方为发起主体，指定company签字",
-        "uid" : "5669cafd0b9b1f25",
+        "uid" : "943cb2bf2050d8f4",
         "parentUid" : "cd7d1cb708f003f249c05887ff82f3e4",
         "status" : "broken",
         "time" : {
-          "start" : 1642674983375,
-          "stop" : 1642674985405,
-          "duration" : 2030
+          "start" : 1643015521397,
+          "stop" : 1643015523428,
+          "duration" : 2031
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'summary': 'ContractCreateByCategory1', 'describe': 'test_ContractCreateByCategory', 'title': '01:流程用例：签署方为发起主体，指定company签字', 'premise': '/document/test_v2DocumentCreateByFile.yaml _ 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
       } ],
       "uid" : "cd7d1cb708f003f249c05887ff82f3e4"
+    }, {
+      "name" : "KeyError: '替换变量${scheme}失败，未发现变量对应关联值！\\n关联列表：{\\'timeout\\': 120, \\'cookies\\': None, \\'headers\\': \\'func_header\\', \\'app_secret\\': \\'safdsgsgw\\', \\'app_token\\': \\'12342543jlkfjsdkjt345j3jl234\\', \\'headers_admin\\': \"func_header{\\'user\\':\\'15800015001\\',\\'pwd\\':\\'12345678\\'}\", \\'header_befor\\': {\\'X-Lemonban-Media-Type\\': \\'lemonban.v2\\'}, \\'admin_user\\': 15800015001, \\'admin_pwd\\': 12345678, \\'user_\\': 15808815004, \\'user_pwd\\': 12345678, \\'dbType\\': \\'mysql\\', \\'host\\': \\'http://127.0.0.1:5000\\', \\'company_auditStatus\\': \\'func_XXXXXX_XXXX\\'}'",
+      "children" : [ {
+        "name" : "test_login",
+        "uid" : "717600c430ae88b2",
+        "parentUid" : "2dedb4a7e62051677cad6a0865d00fcf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1643015525525,
+          "stop" : 1643015525527,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'summary': 'login', 'describe': 'test_login', 'premise': False, 'title': 'test_login', 'parameter': 'login_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': {'code': 0, 'message': '登陆成功', 'token': '645b1e25-f030-46ad-baa7-47c424ac94d1', 'check': False}}}" ]
+      } ],
+      "uid" : "2dedb4a7e62051677cad6a0865d00fcf"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]

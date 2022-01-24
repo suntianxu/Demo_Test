@@ -15,6 +15,7 @@ case_path = os.path.dirname(case_yaml)
 case_dict = read_yaml_data(case_yaml)
 
 
+# @pytest.mark.skip
 @allure.feature(case_dict["test_info"]["title"])
 class TestTemplate:
 

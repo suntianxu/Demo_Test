@@ -1,13 +1,35 @@
 {
-  "total" : 1,
+  "total" : 3,
   "items" : [ {
     "uid" : "cac8f5fc525091a39b7adc6b522441c9",
     "name" : "PyDemo.testcase.contract",
     "statistic" : {
       "failed" : 0,
-      "broken" : 2,
+      "broken" : 3,
       "skipped" : 0,
       "passed" : 0,
+      "unknown" : 0,
+      "total" : 3
+    }
+  }, {
+    "uid" : "b7cc06335fdde34b43922065ca6f868a",
+    "name" : "PyDemo.testcase.login",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "22e9a78b74af5e63e7fa0ebd675f72b2",
+    "name" : "PyDemo.testcase.document",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
       "unknown" : 0,
       "total" : 2
     }

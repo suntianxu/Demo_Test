@@ -2,19 +2,19 @@
 # @Time    : 2021/7/11
 # @Author  : Xuanyu Liu
 # @File    : startup.py
-
+import os
 import sys
 import pytest
 import logging
-
+from comm.script.writeCase import alter
 
 if __name__ == '__main__':
+
     from comm.script import writeLogs, writeCase
     from config import *
 
     # 开启日志记录(默认logs目录)
     writeLogs.MyLogs(ROOT_DIR+'logs')
-
     # 判断运行模式
     if RC['auto_switch'] == 3:
         logging.info("根据接口抓包数据，自动生成测试用例和测试脚本，但不运行测试！")
@@ -45,8 +45,19 @@ if __name__ == '__main__':
     # 判断是否开启用例匹配
     if RC['pattern']:
         args_list += ['-k ' + str(RC['pattern'])]
-    test_result = pytest.main(args_list)
+    try:
+        # 标记跳过用例集
+        if len(RC['skip']) >= 1:
+            for inter in RC['skip']:
+                alter(inter)
+        test_result = pytest.main(args_list)
 
-    # 生成allure报告
-    cmd = 'allure generate --clean %s -o %s ' % (REPORT_DIR+'/xml', REPORT_DIR+'/html')
-    os.system(cmd)
+        # 生成allure报告
+        cmd = 'allure generate --clean %s -o %s ' % (REPORT_DIR+'/xml', REPORT_DIR+'/html')
+        os.system(cmd)
+    except Exception as e:
+        raise e
+    finally:
+        if len(RC['skip']) >= 1:
+            for inter in RC['skip']:
+                alter(inter, 2)

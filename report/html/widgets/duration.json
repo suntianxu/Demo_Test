@@ -1,20 +1,60 @@
 [ {
-  "uid" : "5669cafd0b9b1f25",
-  "name" : "01:流程用例：签署方为发起主体，指定company签字",
+  "uid" : "8aa44e4bbe160ed7",
+  "name" : "00:流程用例：签署方为发起主体，指定个人签字",
   "time" : {
-    "start" : 1642674983375,
-    "stop" : 1642674985405,
-    "duration" : 2030
+    "start" : 1643015521099,
+    "stop" : 1643015521105,
+    "duration" : 6
   },
   "status" : "broken",
   "severity" : "normal"
 }, {
-  "uid" : "9933b581e056431d",
-  "name" : "00:流程用例：签署方为发起主体，指定个人签字",
+  "uid" : "60827b773ca405e8",
+  "name" : "00:通过bizId下载草稿合同",
   "time" : {
-    "start" : 1642674983062,
-    "stop" : 1642674983068,
-    "duration" : 6
+    "start" : 1643015523465,
+    "stop" : 1643015523475,
+    "duration" : 10
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "1c0bf157e4e40e12",
+  "name" : "15:参数必填项校验：未传title",
+  "time" : {
+    "start" : 1643015524506,
+    "stop" : 1643015525522,
+    "duration" : 1016
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6777149ad2238fd9",
+  "name" : "11:根据文件类型创建合同文档-txt",
+  "time" : {
+    "start" : 1643015523489,
+    "stop" : 1643015524503,
+    "duration" : 1014
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "943cb2bf2050d8f4",
+  "name" : "01:流程用例：签署方为发起主体，指定company签字",
+  "time" : {
+    "start" : 1643015521397,
+    "stop" : 1643015523428,
+    "duration" : 2031
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "717600c430ae88b2",
+  "name" : "test_login",
+  "time" : {
+    "start" : 1643015525525,
+    "stop" : 1643015525527,
+    "duration" : 2
   },
   "status" : "broken",
   "severity" : "normal"

@@ -1,29 +1,29 @@
-templateList: # 大类
+v2DocumentCreateByFile: # 大类
   test_info:
-    title: template
+    title: contract_document
     host: ${host}
     scheme: https
-    method: GET
-    address: /template/list
+    method: POST
+    address: /v2/document/createbyfile
     mime_type: multipart/form-data
     headers: ${headers}
     timeout: 10
-    file: false
+    file: true
     cookies: false
     premise: false
   test_case:
-    - summary: 0：获取html参数模板id和参数
+    - summary: v2DocumentCreateByFile
+      describe: test_v2DocumentCreateByFile
       premise: false
-      file: false
+      title: 11:根据文件类型创建合同文档-txt
+      file: file 1.txt
       parameter:
-        type: HTML
-        tenantId: ${tenantId_corporate}
-        property: FORM
+        title: txt合同文件
+        fileType: txt
       check_body:
         check_type: check_json
         expected_code: 200
         expected_result:
-          - ["gt", "code", -1]
-          - ["not_none", "message", "SUCCESS"]
-          - ["!=", "$..signatories", 2]
+          - ["eq", "code", 0]
+          - ["eq", "$..message", "SUCCESS"]
 

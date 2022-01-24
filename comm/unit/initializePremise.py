@@ -168,9 +168,11 @@ def find_func(input_json):
     """
     查找函数调用
     """
-    pattern_all = re.compile(r'func_\w{0,}{\S{0,}\}')
+    pattern_all = re.compile(r'func_\w{0,}{\S{0,}\}')    # func_\w{0,}{\S{0,}\}   不能匹配空格
     pattern = re.compile(r'func_\w{0,}')
-    if isinstance(input_json, str):
+    if isinstance(input_json, str) and "sql" in input_json:
+        input_json = func_DoSql(**eval(input_json.strip("func_DoSql")))
+    elif isinstance(input_json, str):
         res = pattern_all.findall(str(input_json))
         # 对含参数func_xxx{"A":"id"}{"B":"11"} 类型先进行处理
         if res:

@@ -4,7 +4,7 @@
 # @File    : writeCase.py
 # ************************
 import os
-from config import ROOT_DIR
+from config import ROOT_DIR, TEST_DIR
 from comm.script.writeCaseYml import write_case_yaml, read_yaml_data
 temp_file = ROOT_DIR+'config/test_template.py'
 
@@ -43,7 +43,9 @@ def write_case(case_path, auto_yaml=True):
         # 判断文件路径是否存在
         if not os.path.exists(case_path):
             os.makedirs(case_path)
-
+        # 判断测试用例脚本是否已经生成
+        if os.path.exists(test_script):
+            continue
         # 替换模板内容
         file_data = ''
         with open(temp_file, "r", encoding="utf-8") as f:
@@ -64,3 +66,54 @@ def write_case(case_path, auto_yaml=True):
         with open(test_script, "w", encoding="utf-8") as f:
             f.write(file_data)
 
+
+def alter(file, mode=1):
+    """
+    将替换的字符串写到一个新的文件中，然后将原文件删除，新文件改为原来文件的名字
+    :param mode: 1- 2-
+    :param file: 接口命名
+    :return: None
+    """
+    old_str = "# @pytest.mark.skip"
+    new_str = "@pytest.mark.skip"
+    if mode != 1:
+        old_str = "@pytest.mark.skip"
+        new_str = "# @pytest.mark.skip"
+    file = search_file(file)
+    with open(file, "r", encoding="utf-8") as f1, open("%s.bak" % file, "w", encoding="utf-8") as f2:
+        for line in f1:
+            if old_str in line:
+                line = line.replace(old_str, new_str)
+            f2.write(line)
+    os.remove(file)
+    os.rename("%s.bak" % file, file)
+
+
+def search_file(file_name, pathsep=os.pathsep, search_path=TEST_DIR):
+    """
+    用例文件搜索
+    :param file_name: 接口命名
+    :param search_path:
+    :param pathsep:
+    :return:
+    """
+    for path in search_path.split(pathsep):
+        filelist = os.listdir(search_path)
+        file_name = "test_" + file_name + ".py"
+        candidate = os.path.join(path, file_name)
+        if os.path.isfile(candidate):
+            return os.path.abspath(candidate)
+        else:
+            for _dir in filelist:
+                candidate = os.path.join(search_path, _dir, file_name)
+                if os.path.isfile(candidate):
+                    return os.path.abspath(candidate).replace("\\", "/")
+    return None
+
+
+if __name__ == '__main__':
+    # real_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/')
+    # write_case(real_path + '/data', auto_yaml=True)
+    # write_case(r"D:\pythonProject\ApiTesting\PyDemo\page", auto_yaml=False)
+    # search_path = r'D:\pythonProject\ApiTesting-XM\PyDemo\testcase'
+    alter("v2CategoryDetail")

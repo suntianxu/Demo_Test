@@ -1,5 +1,5 @@
 {
-  "total" : 1,
+  "total" : 4,
   "items" : [ {
     "uid" : "bbae03edb350350154fdd31cb3be44c2",
     "name" : "contract_create",
@@ -8,6 +8,39 @@
       "broken" : 1,
       "skipped" : 0,
       "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "485affadd56267b207a0bfd3176681da",
+    "name" : "user",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "6b74c42bd09fef0af9d6be3f5241dc88",
+    "name" : "login",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "6c5d66d0e0e6b2c229785fbbc6fed589",
+    "name" : "contract_document",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     }

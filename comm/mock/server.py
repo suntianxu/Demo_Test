@@ -1,4 +1,6 @@
-from flask import abort, jsonify, Flask, request, Response
+from flask import jsonify, Flask, request
+
+from config import UPLOAD_DIR
 
 app = Flask(__name__)
 # 增加配置，支持中文显示
@@ -20,15 +22,15 @@ def get_createbyfile():
 
 @app.route('/contract/createbycategory', methods=['POST'])
 def get_createbycategory():
-    categoryId = request.values.get('categoryId')
-    documents = request.values.get('documents')
-    # 获取到参数
-    if categoryId and documents:
-        # 判断两个入参是否都传了
-        res = {'code': 0, 'contractId': '2920979528029954131', 'message': 'SUCCESS'}
-        return jsonify(res)  # 返回结果
-    else:  # 如果name或者价格获取不到的话，返回参数错误
-        return jsonify({'code': 1000000, 'message': 'Create Failed'})
+    res = {'code': 0, 'contractId': '2920979528029954131', 'message': 'SUCCESS'}
+    return jsonify(res)  # 返回结果
+
+
+@app.route('/contract/download', methods=['GET', 'POST'])
+def get_download():
+    with open(UPLOAD_DIR+"/jpg合同文件.jpg") as f:
+        res = f
+    return res  # 返回结果
 
 
 @app.route('/contract/signbyperson', methods=['POST'])

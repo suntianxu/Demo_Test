@@ -9,12 +9,12 @@
         "name" : "TestContract_Create",
         "children" : [ {
           "name" : "00:流程用例：签署方为发起主体，指定个人签字",
-          "uid" : "9933b581e056431d",
+          "uid" : "8aa44e4bbe160ed7",
           "parentUid" : "2c61ba36f11f76155527e55c64bbfee4",
           "status" : "broken",
           "time" : {
-            "start" : 1642674983062,
-            "stop" : 1642674983068,
+            "start" : 1643015521099,
+            "stop" : 1643015521105,
             "duration" : 6
           },
           "flaky" : false,
@@ -22,13 +22,13 @@
           "parameters" : [ "{'summary': 'ContractCreateByCategory', 'describe': 'test_ContractCreateByCategory', 'title': '00:流程用例：签署方为发起主体，指定个人签字', 'premise': '/commonCase.yaml v2DocumentCreateByFile 0', 'file': False, 'parameter': 'ContractCreateByCategory_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
         }, {
           "name" : "01:流程用例：签署方为发起主体，指定company签字",
-          "uid" : "5669cafd0b9b1f25",
+          "uid" : "943cb2bf2050d8f4",
           "parentUid" : "2c61ba36f11f76155527e55c64bbfee4",
           "status" : "broken",
           "time" : {
-            "start" : 1642674983375,
-            "stop" : 1642674985405,
-            "duration" : 2030
+            "start" : 1643015521397,
+            "stop" : 1643015523428,
+            "duration" : 2031
           },
           "flaky" : false,
           "newFailed" : false,
@@ -37,7 +37,91 @@
         "uid" : "2c61ba36f11f76155527e55c64bbfee4"
       } ],
       "uid" : "de57e79d6235884541a098528da21839"
+    }, {
+      "name" : "test_ContractDownload",
+      "children" : [ {
+        "name" : "TestUser",
+        "children" : [ {
+          "name" : "00:通过bizId下载草稿合同",
+          "uid" : "60827b773ca405e8",
+          "parentUid" : "aa812e093177a408f0f2a23d5a4e35d1",
+          "status" : "broken",
+          "time" : {
+            "start" : 1643015523465,
+            "stop" : 1643015523475,
+            "duration" : 10
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'summary': 'ContractDownload', 'describe': 'test_ContractDownload', 'title': '00:通过bizId下载草稿合同', 'premise': '/contract/test_ContractCreateByCategory.yaml _ 0', 'file': False, 'download_name': '下载合同.zip', 'parameter': {'bizId': '${bizId}'}, 'check_body': {'check_type': 'check_code', 'expected_code': 200, 'expected_result': [200]}}" ]
+        } ],
+        "uid" : "aa812e093177a408f0f2a23d5a4e35d1"
+      } ],
+      "uid" : "ecf0c0e8e9b525bbbbc0f667dea6eeda"
     } ],
     "uid" : "cac8f5fc525091a39b7adc6b522441c9"
+  }, {
+    "name" : "PyDemo.testcase.document",
+    "children" : [ {
+      "name" : "test_v2DocumentCreateByFile",
+      "children" : [ {
+        "name" : "TestContract_Document",
+        "children" : [ {
+          "name" : "11:根据文件类型创建合同文档-txt",
+          "uid" : "6777149ad2238fd9",
+          "parentUid" : "ad8a479dc016bcf06979e4c130a93aa8",
+          "status" : "passed",
+          "time" : {
+            "start" : 1643015523489,
+            "stop" : 1643015524503,
+            "duration" : 1014
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'summary': 'v2DocumentCreateByFile', 'describe': 'test_v2DocumentCreateByFile', 'premise': False, 'title': '11:根据文件类型创建合同文档-txt', 'file': 'file 1.txt', 'parameter': {'title': 'txt合同文件', 'fileType': 'txt'}, 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 0], ['eq', '$..message', 'SUCCESS']]}}" ]
+        }, {
+          "name" : "15:参数必填项校验：未传title",
+          "uid" : "1c0bf157e4e40e12",
+          "parentUid" : "ad8a479dc016bcf06979e4c130a93aa8",
+          "status" : "passed",
+          "time" : {
+            "start" : 1643015524506,
+            "stop" : 1643015525522,
+            "duration" : 1016
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'summary': 'v2DocumentCreateByFile', 'describe': 'test_v2DocumentCreateByFile', 'premise': False, 'title': '15:参数必填项校验：未传title', 'file': 'file 1.txt', 'parameter': {'fileType': 'txt'}, 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': [['eq', 'code', 1000000], ['eq', '$..message', 'Upload Failed']]}}" ]
+        } ],
+        "uid" : "ad8a479dc016bcf06979e4c130a93aa8"
+      } ],
+      "uid" : "d000a2932025ad547c1c712e4c79c681"
+    } ],
+    "uid" : "22e9a78b74af5e63e7fa0ebd675f72b2"
+  }, {
+    "name" : "PyDemo.testcase.login",
+    "children" : [ {
+      "name" : "test_login",
+      "children" : [ {
+        "name" : "TestLogin",
+        "children" : [ {
+          "name" : "test_login",
+          "uid" : "717600c430ae88b2",
+          "parentUid" : "7222b8855411f9de5d1ec3ad7ac087b3",
+          "status" : "broken",
+          "time" : {
+            "start" : 1643015525525,
+            "stop" : 1643015525527,
+            "duration" : 2
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'summary': 'login', 'describe': 'test_login', 'premise': False, 'title': 'test_login', 'parameter': 'login_request.json', 'check_body': {'check_type': 'check_json', 'expected_code': 200, 'expected_result': {'code': 0, 'message': '登陆成功', 'token': '645b1e25-f030-46ad-baa7-47c424ac94d1', 'check': False}}}" ]
+        } ],
+        "uid" : "7222b8855411f9de5d1ec3ad7ac087b3"
+      } ],
+      "uid" : "1e7119036ac36a555361260d99dccebb"
+    } ],
+    "uid" : "b7cc06335fdde34b43922065ca6f868a"
   } ]
 }
