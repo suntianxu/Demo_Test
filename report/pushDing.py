@@ -11,9 +11,14 @@ import jenkins
 import requests
 import json
 
-from config import RC
+import sys
 
 ROOT_DIR = str(os.path.realpath(__file__)).split('report')[0].replace('\\', '/')
+CONFIG = ROOT_DIR + 'config'
+sys.path.append(CONFIG)
+
+from config import RC
+
 REPORT_DIR = ROOT_DIR + 'report'
 
 
