@@ -27,6 +27,9 @@ maxfail: 200
 # 接口调用间隔时间（s）
 interval: 1
 
+# 跳过用例集  如：test_ContractCreateByCategory.yaml 此用例集 ，则在下方列表中写入 ["ContractCreateByCategory"] 可跳过多个 逗号分隔
+skip: []
+
 # jenkins地址
 Jenkins_conf:
   url: http://127.0.0.1:8080
