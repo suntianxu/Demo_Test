@@ -38,7 +38,7 @@ Jenkins_conf:
 job_name: job/private_XM/
 
 # 钉钉配置
-dd_url: https://oapi.dingtalk.com/robot/send?access_token=46030407455f3f0c10bb186e041e470fc1c3c63c774582cd9775b41b66ee9760    #webhook
+dd_url: https://oapi.dingtalk.com/robot/send?access_token=46030407455f3f0c10bb1xxxxxxxxxxxxxxxxxxxxxxcd9775b41b66ee9760    #webhook
 
 # 测试结果校验方式说明（共6种方式）：
 # no_check：不做任何校验
