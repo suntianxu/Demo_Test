@@ -5,20 +5,22 @@
 # datetime： 2021/8/25 17:35 
 # ide： PyCharm
 
-
 import os
 import jenkins
 import requests
 import json
+import yaml
 
-import sys
 
-from comm.utils.readYaml import read_yaml_data
+def read_yaml_data(yaml_file):
+    yaml_file = yaml_file.replace('\\', '/')
+    with open(yaml_file, 'r', encoding="utf-8") as fr:
+        return yaml.load(fr, Loader=yaml.SafeLoader)
+
 
 ROOT_DIR = str(os.path.realpath(__file__)).split('report')[0].replace('\\', '/')
 RUN_CONFIG = ROOT_DIR+'config/runConfig.yml'
 RC = read_yaml_data(RUN_CONFIG)
-
 REPORT_DIR = ROOT_DIR + 'report'
 
 
