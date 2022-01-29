@@ -32,13 +32,13 @@ skip: []
 
 # jenkins地址
 Jenkins_conf:
-  url: http://127.0.0.1:8080
+  url: http://192.168.60.190:8080/
   username: admin
-  password: '123456as'
-job_name: job/private_apiTesting/
+  password: 'asdf1@34'
+job_name: job/private_XM/
 
 # 钉钉配置
-dd_url: fsdfsfsdfdds    #webhook
+dd_url: https://oapi.dingtalk.com/robot/send?access_token=46030407455f3f0c10bb186e041e470fc1c3c63c774582cd9775b41b66ee9760    #webhook
 
 # 测试结果校验方式说明（共6种方式）：
 # no_check：不做任何校验
