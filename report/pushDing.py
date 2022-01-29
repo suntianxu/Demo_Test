@@ -13,11 +13,11 @@ import json
 
 import sys
 
-ROOT_DIR = str(os.path.realpath(__file__)).split('report')[0].replace('\\', '/')
-CONFIG = ROOT_DIR + 'config'
-sys.path.append(CONFIG)
+from comm.utils.readYaml import read_yaml_data
 
-from config import RC
+ROOT_DIR = str(os.path.realpath(__file__)).split('report')[0].replace('\\', '/')
+RUN_CONFIG = ROOT_DIR+'config/runConfig.yml'
+RC = read_yaml_data(RUN_CONFIG)
 
 REPORT_DIR = ROOT_DIR + 'report'
 
